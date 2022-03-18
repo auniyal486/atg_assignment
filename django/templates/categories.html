@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container" >
+  {% if categories|length == 0 %}  
+    <div class="alert alert-dark" role="alert">
+      No record found
+    </div>
+  {% else %} 
+    <div id="table-wrapper">
+      <div id="table-scroll">
+        <table class="table table_database table-striped table-bordered"  id="table_database">
+          <thead>
+            <tr>
+              <th scope="col">Serial no</th>
+              <th scope="col">Category</th>
+            </tr>
+          </thead>
+          <tbody id="myTable">
+          {% for item in categories %}
+            <tr>
+              <th scope="row">{{forloop.counter}}</th>
+              <td id="category"><a href="{% url 'atg_app:subcategory_data' state item.id %}">{{item.Category}}</a></td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  {% endif %}
+</div>
+{% endblock body %}

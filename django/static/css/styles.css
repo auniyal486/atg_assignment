@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: lavender;
+}
+.signup,
+.login{
+    width: 50%;
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    margin-bottom: 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.signup-form,
+.login-form{
+    background: #fff;
+    padding: 40px;
+    width: 100%;
+}
+.input{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 2px solid #e9eaea;
+    color: #3e3e40;
+    font-size: 14px;
+    outline: none;
+    transform: all 0.5s ease;
+}
+.input:focus{
+    border: 2px solid #34b3a0;
+}
+  
+.button{
+    width: 100%;
+}
+
+.table_database{
+    text-align: center;
+    max-width: 100%;
+    margin: auto;
+}
+
+.button{
+    text-align: center;
+}
+small{
+    text-align: left;
+}
+.dropdown-button{
+    border: none;
+    outline: none;
+    color: black;
+    background-color: inherit;
+}
+
+#table-wrapper {
+    position:relative;
+  }
+  #table-scroll {
+    overflow:auto;  
+  }
+  #table-wrapper table {
+    width:100%;
+  }
+  #table-wrapper table * {
+    color:black;
+  }
+  #table-wrapper table thead th .text {
+    position:absolute;   
+    top:-20px;
+    z-index:2;
+    height:20px;
+    width:35%;
+    border:1px solid red;
+  }

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container" >
+    {% if jobs|length == 0 %}  
+      <div class="alert alert-dark" role="alert">
+        No record found
+      </div>
+    {% else %} 
+      <div id="table-wrapper">
+        <div id="table-scroll">
+          <table class="table table_database table-striped table-bordered"  id="table_database">
+            <thead>
+              <tr>
+                <th scope="col">Serial no</th>
+                <th scope="col">JobPosition</th>
+                <th scope="col">Company</th>
+                <th scope="col">Field</th>
+                <th scope="col">Action</th> 
+              </tr>
+            </thead>
+            <tbody id="myTable">
+            {% for item in jobs %}
+              <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td id="jobPosition">{{item.JobPosition}}</td>
+                <td>{{item.Company_id.Name}}</td>
+                <td>{{item.Company_id.Field}}</td>
+                <td>
+                    <a href="{% url 'atg_app:job_details' state cat subcat item.id %}"  type="button"  class="btn btn-outline-success btn-sm mr-1" >Read More..</a>
+                </td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    {% endif %}
+  </div>  
+{% endblock body %}

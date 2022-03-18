@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container" >
+  {% if subcategories|length == 0 %}  
+    <div class="alert alert-dark" role="alert">
+      No record found
+    </div>
+  {% else %} 
+    <div id="table-wrapper">
+      <div id="table-scroll">
+        <table class="table table_database table-striped table-bordered"  id="table_database">
+          <thead>
+            <tr>
+              <th scope="col">Serial no</th>
+              <th scope="col">Subcategory</th>
+            </tr>
+          </thead>
+          <tbody id="myTable">
+          {% for item in subcategories %}
+            <tr>
+              <th scope="row">{{forloop.counter}}</th>
+              <td id="subcategory"><a href="{% url 'atg_app:jobs_data' state cat item.id %}">{{item.Subcategory}}</a></td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+{% endblock body %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container" >
+    <h2>{{job.JobPosition}}</h2>
+    <br>
+    <h6>{{job.Company_id.Name}}</h6>
+    <br>
+    <p>{{job.Company_id.Description}}</p>
+  </div>  
+{% endblock body %}
